@@ -18,7 +18,8 @@
 		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI
 		myurl = encodeURI("http://events.hackerdojo.com/events.json");
 		AJAX.init(function(returndata) {
-			document.getElementById('preinfo').innerHTML = JSON.stringify(returndata, null, 4);
+			//document.getElementById('preinfo').innerHTML = JSON.stringify(returndata, null, 4);
+			document.getElementById('preinfo').innerHTML = JSON.stringify(returndata.length, null, 4);
 		})
 		AJAX.GET(myurl);
 	}
