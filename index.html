@@ -18,8 +18,9 @@
 		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI
 		myurl = encodeURI("http://events.hackerdojo.com/events.json");
 		AJAX.init(function(returndata) {
+			// Data returned from 'hackerdojo' needed further refinement to look decent. So I opted for the length instead.
 			//document.getElementById('preinfo').innerHTML = JSON.stringify(returndata, null, 4);
-			document.getElementById('preinfo').innerHTML = JSON.stringify(returndata.length, null, 4);
+			document.getElementById('preinfo').innerHTML = 'returndata.length:' + returndata.length;
 		})
 		AJAX.GET(myurl);
 	}
