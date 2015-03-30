@@ -39,4 +39,11 @@ var AJAX = {
 		jsonhttp.send();
 		// After this the callback handles the returning data.
 	}
+	// HOW TO DO a POST method:
+	// POST : function (URL, data) {
+	//	async = true; // This is explicit for clarity.
+	//	jsonhttp.open("POST", URL, true);
+	//	jsonhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	//	jsonhttp.send(data);
+	// }
 }
