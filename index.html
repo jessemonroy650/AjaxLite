@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="buttons.css" />
     <style>
     body {margin:0px;font-size:large;}
-	.hidden {visibility:collapse;display:none;}
-	.expose {visibility:visible;display:block;} /* Here for completeness only. */
-	.copyright {padding:5px;align:left;font-style:italic;font-size:small;}
+    .hidden {visibility:collapse;display:none;}
+    .expose {visibility:visible;display:block;} /* Here for completeness only. */
+    .copyright {padding:5px;align:left;font-style:italic;font-size:small;}
+    #exitApp {margin:1em;}
     </style>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="ajaxLite.js"></script>
@@ -32,7 +33,8 @@
 		// hide Exit button. They don't have one on iOS devices.
 		if (device.platform === "iOS") {
 			//alert("got iOS");
-			$("#exitApp").addClass("hidden");
+			// http://www.mzcart.com/javascript-how-to-addremove-css-class-from-a-dom-element/
+			document.getElementById('exitApp').classList.add("hidden");
 		}
 		alert("device ready.");
 	}
