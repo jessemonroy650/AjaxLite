@@ -15,6 +15,6 @@
         <gap:platform name="android" />
         <gap:platform name="ios" />
         <preference name="permissions" value="none"/>
-		<!-- device required so we can detect if we are using iOS -->
-		<gap:plugin name="org.apache.cordova.device" />
+        <!-- device required so we can detect if we are using iOS -->
+        <gap:plugin name="org.apache.cordova.device" />
     </widget>

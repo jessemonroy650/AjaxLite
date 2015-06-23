@@ -14,41 +14,41 @@
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8" src="ajaxLite.js"></script>
     <script type="text/javascript">
-	function onButtonClick() {
-		alert("button clicked.");
-		// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI
-		myurl = encodeURI("http://events.hackerdojo.com/events.json");
-		AJAX.init(function(returndata) {
-			// Data returned from 'hackerdojo' needed further refinement to look decent. So I opted for the length instead.
-			//document.getElementById('preinfo').innerHTML = JSON.stringify(returndata, null, 4);
-			document.getElementById('preinfo').innerHTML = 'returndata.length:' + returndata.length;
-		})
-		AJAX.GET(myurl);
-	}
-	//
+    function onButtonClick() {
+        alert("button clicked.");
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI
+        myurl = encodeURI("http://events.hackerdojo.com/events.json");
+        AJAX.init(function(returndata) {
+            // Data returned from 'hackerdojo' needed further refinement to look decent. So I opted for the length instead.
+            //document.getElementById('preinfo').innerHTML = JSON.stringify(returndata, null, 4);
+            document.getElementById('preinfo').innerHTML = 'returndata.length:' + returndata.length;
+        })
+        AJAX.GET(myurl);
+    }
+    //
     // Wait for PhoneGap to load
-	document.addEventListener("deviceready", onDeviceReady, false);
-	//
-	function onDeviceReady() {
-		// hide Exit button. They don't have one on iOS devices.
-		if (device.platform === "iOS") {
-			//alert("got iOS");
-			// http://www.mzcart.com/javascript-how-to-addremove-css-class-from-a-dom-element/
-			document.getElementById('exitApp').classList.add("hidden");
-		}
-		alert("device ready.");
-	}
-	//
-	function onLoad() {
-		//alert("body loaded.");
-	}
+    document.addEventListener("deviceready", onDeviceReady, false);
+    //
+    function onDeviceReady() {
+        // hide Exit button. They don't have one on iOS devices.
+        if (device.platform === "iOS") {
+            //alert("got iOS");
+            // http://www.mzcart.com/javascript-how-to-addremove-css-class-from-a-dom-element/
+            document.getElementById('exitApp').classList.add("hidden");
+        }
+        alert("device ready.");
+    }
+    //
+    function onLoad() {
+        //alert("body loaded.");
+    }
     </script>
 </head>
 <body onload="onLoad()">
 <div class="button button-block button-large">
-	<img align=left src=favicon-48x48.png>
-	Ajax Lite Test
-	<button id=exitApp onclick='navigator.app.exitApp()' class="button button-pill button-primary button-large" style="margin:0.1em;float:right;">Exit</button>
+    <img align=left src=favicon-48x48.png>
+    Ajax Lite Test
+    <button id=exitApp onclick='navigator.app.exitApp()' class="button button-pill button-primary button-large" style="margin:0.1em;float:right;">Exit</button>
 </div>
 
 <button onclick='onButtonClick()' class="button button-pill button-action button-large">button</button>
